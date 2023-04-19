@@ -164,18 +164,6 @@ app.layout = html.Div(children=[
             'background-color': 'black',
             'padding': '10px',
             'margin-top': '50px'}),
-    ]),
-    html.Div(children=[
-        html.H1("Les stations d'Ile de France et ses lignes", style={'color': 'green'}),
-        dcc.Graph(id="map-graph", figure=px.scatter_mapbox(
-            df_idf,
-            lat='latitude',
-            lon='longitude',
-            hover_name='nom_long',
-            zoom=8,
-            color_discrete_map=couleurs,
-            color='ligne'
-        ).update_layout(mapbox_style='open-street-map', height=500))
     ])
 
 ])
