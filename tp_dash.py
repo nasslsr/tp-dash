@@ -164,9 +164,7 @@ app.layout = html.Div(children=[
             'padding': '10px',
             'margin-top': '50px'}),
     ]),
-    html.Div(children=[
-        html.H1("Les stations d'Ile de France et ses lignes", style={'color': 'green'}),
-        dcc.Graph(id="map-graph", figure=px.scatter_mapbox(
+dcc.Graph(id="map-graph", figure=px.scatter_mapbox(
             df_idf,
             lat='latitude',
             lon='longitude',
@@ -175,7 +173,6 @@ app.layout = html.Div(children=[
             color_discrete_map=couleurs,
             color='ligne'
         ).update_layout(mapbox_style='open-street-map', height=500))
-    ])
 
 ])
 
@@ -227,6 +224,7 @@ def update_bar_chart(ligne):
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+
 
 
 
